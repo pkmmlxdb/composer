@@ -1527,6 +1527,10 @@ class State(Serializable):
                 continue
             log.debug(f'Loading {attribute_name} into state.')
 
+            if attribute_name == "callbacks":
+                print("#"*50)
+                print(self.callbacks)
+                print("$"*50)
             # Restructure algorithms serialized_value from list to dict
             if attribute_name == 'algorithms' and isinstance(serialized_value, list):
                 serialized_value = dict(serialized_value)
